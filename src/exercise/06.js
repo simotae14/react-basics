@@ -28,12 +28,12 @@ function UsernameForm({onSubmitUsername}) {
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label htmlFor="firstName">First name:</label>
-        <input id="firstName" type="text" />
+        <label htmlFor="firstNameInput">First name:</label>
+        <input name="firstName" id="firstNameInput" type="text" />
       </div>
       <div>
-        <label htmlFor="username">Username:</label>
-        <input id="username" type="text" />
+        <label htmlFor="usernameInput">Username:</label>
+        <input name="username" id="usernameInput" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
