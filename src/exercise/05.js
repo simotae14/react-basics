@@ -28,11 +28,13 @@ const largeBox = (
   </Box>
 )
 
-function Box({className, style, children}) {
+function Box({className = '', style, ...restProps}) {
   return (
-    <div className={`box ${className}`} style={{fontStyle: 'italic', ...style}}>
-      {children}
-    </div>
+    <div
+      className={`box ${className}`.trim()}
+      style={{fontStyle: 'italic', ...style}}
+      {...restProps}
+    />
   )
 }
 
