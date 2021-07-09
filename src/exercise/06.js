@@ -21,15 +21,19 @@ function UsernameForm({onSubmitUsername}) {
   // to do so, set the value of 'htmlFor' prop of the label to the id of input
   function handleSubmit(event) {
     event.preventDefault()
-    // first attempt
-    const value = event.target[0].value
+    // using htmlFor
+    const value = event.target.elements.username.value
     onSubmitUsername(value)
   }
   return (
     <form onSubmit={handleSubmit}>
       <div>
-        <label>Username:</label>
-        <input type="text" />
+        <label htmlFor="firstName">First name:</label>
+        <input id="firstName" type="text" />
+      </div>
+      <div>
+        <label htmlFor="username">Username:</label>
+        <input id="username" type="text" />
       </div>
       <button type="submit">Submit</button>
     </form>
