@@ -35,7 +35,12 @@ function UsernameForm({onSubmitUsername}) {
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="firstNameInput">First name:</label>
-        <input name="firstName" id="firstNameInput" type="text" />
+        <input
+          name="firstName"
+          id="firstNameInput"
+          type="text"
+          defaultValue="some default"
+        />
       </div>
       <div>
         <label htmlFor="usernameInput">Username:</label>
