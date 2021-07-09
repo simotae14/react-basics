@@ -21,22 +21,15 @@ function UsernameForm({onSubmitUsername}) {
   // to do so, set the value of 'htmlFor' prop of the label to the id of input
   function handleSubmit(event) {
     event.preventDefault()
-    // using ref
-    const value = inputRef.current.value
-    onSubmitUsername(value)
+    onSubmitUsername(username)
   }
 
-  function handleValidation(event) {
+  function handleChange(event) {
     const inputValue = event.target.value
-    const isValid = inputValue === inputValue.toLowerCase()
-    setError(
-      isValid
-        ? null
-        : `The value ${inputValue} is not valid because we want just lowercase letters`,
-    )
+    setUsername(inputValue.toLowerCase())
   }
   // define error state
-  const [error, setError] = React.useState(null)
+  const [username, setUsername] = React.useState('')
   const inputRef = React.createRef()
   return (
     <form onSubmit={handleSubmit}>
@@ -47,21 +40,15 @@ function UsernameForm({onSubmitUsername}) {
       <div>
         <label htmlFor="usernameInput">Username:</label>
         <input
-          onChange={handleValidation}
+          onChange={handleChange}
           ref={inputRef}
           name="username"
           id="usernameInput"
           type="text"
+          value={username}
         />
-        {error && (
-          <div style={{color: 'red'}} role="alert" id="error">
-            {error}
-          </div>
-        )}
       </div>
-      <button type="submit" disabled={Boolean(error)}>
-        Submit
-      </button>
+      <button type="submit">Submit</button>
     </form>
   )
 }
