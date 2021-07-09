@@ -22,7 +22,7 @@ function UsernameForm({onSubmitUsername}) {
   function handleSubmit(event) {
     event.preventDefault()
     // first attempt
-    const value = event.target.elements[0].value
+    const value = event.target[0].value
     onSubmitUsername(value)
   }
   return (
