@@ -245,6 +245,11 @@ This project follows the
 [all-contributors](https://github.com/kentcdodds/all-contributors)
 specification. Contributions of any kind welcome!
 
+## Notes
+
+Here you can find the notes for this section:
+[Appunti]: https://github.com/simotae14/react-basics/blob/main/NOTES.md
+
 ## Workshop Feedback
 
 Each exercise has an Elaboration and Feedback link. Please fill that out after
